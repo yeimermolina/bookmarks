@@ -25,7 +25,7 @@ SECRET_KEY = '&u34ftp3a49ryzl!bgw=$x(3v@d!h18q8z*tftf3rwxdh3eh%b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
     'account',
     'django.contrib.admin',
 )
@@ -50,6 +51,14 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+)
+
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social.backends.facebook.Facebook2OAuth2',
+    'social.backends.twitter.TwitterOAuth',
 )
 
 ROOT_URLCONF = 'bookmarks.urls'
@@ -119,4 +128,12 @@ EMAIL_HOST_PASSWORD = 'Yeimergabriel12'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1479688882068840' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'df60a60160da3dd4afe5b34789132a98' # Facebook App Secre
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+
+SOCIAL_AUTH_TWITTER_KEY = 'QtpzKrg3418XNRu2hkF9qUjCs' # Twitter Consumer Key
+SOCIAL_AUTH_TWITTER_SECRET = 'xiIMNZNk3mElol5ttg6Zl7l5OU68yKpCnov8JbYDvPBJ6a8Sdn' # Twitter Consumer Secret
 
