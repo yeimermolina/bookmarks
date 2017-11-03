@@ -1,0 +1,17 @@
+
+
+{% for image in images %}
+    <div class="image">
+        <a href="">
+            
+                <a href="">
+                    <img src="{{ image.image.url }}">
+                </a>
+            
+        </a>
+        <div class="info">
+            <a href="" class="title">{{ image.title }}</a>
+        </div>
+    </div>
+{% endfor %}
+

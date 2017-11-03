@@ -38,8 +38,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
+    
     'account',
+    'images',
     'django.contrib.admin',
+    'sorl.thumbnail',
 )
 
 MIDDLEWARE_CLASSES = (
