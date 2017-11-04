@@ -2,15 +2,15 @@
 
 {% for image in images %}
     <div class="image">
-        <a href="">
+        <a href="{{ image.get_absolute_url }}">
             
-                <a href="">
+                <a href="{{ image.get_absolute_url }}">
                     <img src="{{ image.image.url }}">
                 </a>
             
         </a>
         <div class="info">
-            <a href="" class="title">{{ image.title }}</a>
+            <a href="{{ image.get_absolute_url }}" class="title">{{ image.title }}</a>
         </div>
     </div>
 {% endfor %}

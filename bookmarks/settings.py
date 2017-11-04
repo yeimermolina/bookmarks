@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     
     'account',
     'images',
+    'actions',
     'django.contrib.admin',
     'sorl.thumbnail',
 )
@@ -139,4 +140,9 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 SOCIAL_AUTH_TWITTER_KEY = 'QtpzKrg3418XNRu2hkF9qUjCs' # Twitter Consumer Key
 SOCIAL_AUTH_TWITTER_SECRET = 'xiIMNZNk3mElol5ttg6Zl7l5OU68yKpCnov8JbYDvPBJ6a8Sdn' # Twitter Consumer Secret
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail',
+        args=[u.username])
+}
 
